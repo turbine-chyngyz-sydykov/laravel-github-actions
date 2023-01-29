@@ -6,7 +6,7 @@ jobs:
     steps:
       - name: hello message
         run: |
-          echo "hello"
+          php -v
           echo "world"
       - name: bye message
         run: echo "bye bye"
