@@ -18,7 +18,6 @@ jobs:
           php artisan key:generate
       - name: run tests
         run: php artisan test
-
     deploy project:
         runs-on: ubuntu-latest
         steps:
