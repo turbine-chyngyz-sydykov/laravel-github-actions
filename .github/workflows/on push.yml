@@ -18,20 +18,20 @@ jobs:
           php artisan key:generate
       - name: run tests
         run: php artisan test
-    deploy project:
-        runs-on: ubuntu-latest
-        steps:
-          - name: php v 8.2
-            uses: shivammathur/setup-php@v2
-            with:
-                php-version: '8.2'
-          - name: get repo code to ubuntu
-            uses: actions/checkout@v3
-          - name: setup project
-            run: |
-              composer install --no-dev
-              npm run build
-              cp .env.example .env
-              php artisan key:generate
-          - name: Deploy
-            run: echo "Deployed"
+  deploy project:
+      runs-on: ubuntu-latest
+      steps:
+        - name: php v 8.2
+          uses: shivammathur/setup-php@v2
+          with:
+              php-version: '8.2'
+        - name: get repo code to ubuntu
+          uses: actions/checkout@v3
+        - name: setup project
+          run: |
+            composer install --no-dev
+            npm run build
+            cp .env.example .env
+            php artisan key:generate
+        - name: Deploy
+          run: echo "Deployed"
