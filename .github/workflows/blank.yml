@@ -4,9 +4,10 @@ jobs:
   first_job:
     runs-on: ubuntu-latest
     steps:
-      - name: hello message
+      - name: php v 8.2
+        uses: shivammathur/setup-php@v2
+      - name: console commands
         run: |
           php -v
-          echo "world"
       - name: bye message
         run: echo "bye bye"
