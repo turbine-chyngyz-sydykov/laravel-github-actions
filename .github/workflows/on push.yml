@@ -30,6 +30,7 @@ jobs:
         - name: setup project
           run: |
             composer install --no-dev
+            npm install
             npm run build
             cp .env.example .env
             php artisan key:generate
