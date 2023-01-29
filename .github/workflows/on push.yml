@@ -12,8 +12,8 @@ jobs:
         uses: actions/checkout@v3
       - name: setup project
         run: |
-          composer install
-          npm install
+          composer install --quiet
+          npm install --quiet
           cp .env.example .env
           php artisan key:generate
       - name: run tests
