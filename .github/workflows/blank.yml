@@ -1,4 +1,4 @@
-name: First workflow
+name: Manual Dispatch
 on: workflow_dispatch
 jobs:
   first_job:
@@ -6,6 +6,8 @@ jobs:
     steps:
       - name: php v 8.2
         uses: shivammathur/setup-php@v2
+        with:
+            php-version: '8.2'
       - name: console commands
         run: |
           php -v
